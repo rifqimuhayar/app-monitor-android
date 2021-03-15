@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00B8D4"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        >
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            />
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="#ffff"
+            android:text="Hasil Pencarian"
+            />
+    </LinearLayout>
+    <ScrollView
+        android:id="@+id/content_hide"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/non_parse_message"
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Installing Apache HTTP Server 2.x with DomainName = example.com ServerName = www.example.com ServerAdmin = admin@example.com ServerPort = 80 ServerSslPort = 443 ServerRoot = c:/Apache24 Rewrote docs/conf/extra/httpd-autoindex.conf.in to c:/Apache24/conf/original/extra/httpd-autoindex.conf Rewrote docs/conf/extra/httpd-default.conf.in to c:/Apache24/conf/original/extra/httpd-default.conf Rewrote docs/conf/extra/httpd-ssl.conf.in to c:/Apache24/conf/original/extra/httpd-ssl.conf Rewrote docs/conf/extra/httpd-multilang-errordoc.conf.in to c:/Apache24/conf/original/extra/httpd-multilang-errordoc.conf Rewrote docs/conf/extra/httpd-info.conf.in to c:/Apache24/conf/original/extra/httpd-info.conf Rewrote docs/conf/extra/httpd-userdir.conf.in to c:/Apache24/conf/original/extra/httpd-userdir.conf Rewrote docs/conf/extra/httpd-mpm.conf.in to c:/Apache24/conf/original/extra/httpd-mpm.conf Rewrote docs/conf/httpd.conf.in to c:/Apache24/conf/original/httpd.conf Rewrote docs/conf/extra/proxy-html.conf.in to c:/Apache24/conf/original/extra/proxy-html.conf Rewrote docs/conf/extra/httpd-vhosts.conf.in to c:/Apache24/conf/original/extra/httpd-vhosts.conf Rewrote docs/conf/extra/httpd-dav.conf.in to c:/Apache24/conf/original/extra/httpd-dav.conf Rewrote docs/conf/extra/httpd-languages.conf.in to c:/Apache24/conf/original/extra/httpd-languages.conf Rewrote docs/conf/extra/httpd-manual.conf.in to c:/Apache24/conf/original/extra/httpd-manual.conf Duplicated c:/Apache24/conf/original/extra/httpd-autoindex.conf to c:/Apache24/conf/extra/httpd-autoindex.conf Duplicated c:/Apache24/conf/original/extra/httpd-default.conf to c:/Apache24/conf/extra/httpd-default.conf Duplicated c:/Apache24/conf/original/extra/httpd-ssl.conf to c:/Apache24/conf/extra/httpd-ssl.conf Duplicated c:/Apache24/conf/original/extra/httpd-multilang-errordoc.conf to c:/Apache24/conf/extra/httpd-multilang-errordoc.conf Duplicated c:/Apache24/conf/original/extra/httpd-info.conf to c:/Apache24/conf/extra/httpd-info.conf Duplicated c:/Apache24/conf/original/extra/httpd-userdir.conf to c:/Apache24/conf/extra/httpd-userdir.conf Duplicated c:/Apache24/conf/original/extra/httpd-mpm.conf to c:/Apache24/conf/extra/httpd-mpm.conf Duplicated c:/Apache24/conf/original/httpd.conf to c:/Apache24/conf/httpd.conf Duplicated c:/Apache24/conf/original/magic to c:/Apache24/conf/magic Duplicated c:/Apache24/conf/original/charset.conv to c:/Apache24/conf/charset.conv Duplicated c:/Apache24/conf/original/extra/proxy-html.conf to c:/Apache24/conf/extra/proxy-html.conf Duplicated c:/Apache24/conf/original/extra/httpd-vhosts.conf to c:/Apache24/conf/extra/httpd-vhosts.conf Duplicated c:/Apache24/conf/original/extra/httpd-dav.conf to c:/Apache24/conf/extra/httpd-dav.conf Duplicated c:/Apache24/conf/original/mime.types to c:/Apache24/conf/mime.types Duplicated c:/Apache24/conf/original/extra/httpd-languages.conf to c:/Apache24/conf/extra/httpd-languages.conf Duplicated c:/Apache24/conf/original/extra/httpd-manual.conf to c:/Apache24/conf/extra/httpd-manual.conf"
+                />
+        </LinearLayout>
+    </ScrollView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_log"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/content_detail_log"
+        />
+
+</LinearLayout>

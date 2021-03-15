@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        app:cardElevation="10dp"
+        android:clipToPadding="false"
+        app:cardCornerRadius="15dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="20dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="15dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_baseline_access_time_24"
+                    />
+                <TextView
+                    android:id="@+id/acces_time_error"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mon Mar 15 15:44:53.256080 2021"
+                    android:textColor="#504F4F"
+                    android:fontFamily="@font/segoeui"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="15dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_baseline_assignment_24"
+                    />
+                <TextView
+                    android:id="@+id/case_time"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="core:notice"
+                    android:textColor="#504F4F"
+                    android:fontFamily="@font/segoeui"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="15dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_baseline_home_24"
+                    />
+                <TextView
+                    android:id="@+id/pid_loc"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="pid 9660:tid 548"
+                    android:textColor="#504F4F"
+                    android:fontFamily="@font/segoeui"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="15dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_baseline_message_24"
+                    />
+                <TextView
+                    android:id="@+id/message"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name\r"
+                    android:textColor="#504F4F"
+                    android:fontFamily="@font/segoeui"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/view_strip"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:src="#676EE6"
+            />
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
