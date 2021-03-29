@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.alqudri.appmontor.R
 import com.alqudri.appmontor.model.process.DataItem
+import com.alqudri.appmontor.utill.hideView
 import ir.androidexception.datatable.model.DataTableHeader
 import ir.androidexception.datatable.model.DataTableRow
 import kotlinx.android.synthetic.main.activity_process.*
@@ -60,5 +61,20 @@ class ProcessActivity : AppCompatActivity() {
         data_table.inflate(this)
     }
 
+
+
+//    override fun onPause() {
+//        super.onPause()
+//        Log.d("asasa", "pause")
+//        v.hideView(false)
+//        j.hideView(true)
+//    }
+//
+//    override fun onResume() {
+//        super.onResume()
+//        Log.d("asasa", "resume")
+//        v.hideView(true)
+//        j.hideView(false)
+//    }
 
 }

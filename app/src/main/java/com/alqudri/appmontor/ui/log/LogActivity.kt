@@ -24,7 +24,7 @@ class LogActivity : AppCompatActivity() {
 
         val mode = intent.getStringExtra("mode")
         mode?.let { logViewModel.getAccess(it) }
-
+        name_app.text = mode
         when (mode) {
             Static.ERROR_LOG -> {
                 mode?.let { logViewModel.getAccess(it) }

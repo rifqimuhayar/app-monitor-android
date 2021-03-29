@@ -27,9 +27,14 @@
             android:textSize="20dp"
             android:fontFamily="sans-serif-black"
             android:textColor="#ffff"
-            android:text="Hasil Pencarian"
+            android:text="Process Services And APP"
             />
     </LinearLayout>
+    <View
+        android:id="@+id/v"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
     <ir.androidexception.datatable.DataTable
         android:id="@+id/data_table"
         android:layout_width="match_parent"

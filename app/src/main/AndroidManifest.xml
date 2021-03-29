@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.log.LogActivity"></activity>
+        <activity android:name=".ui.systeminfo.InfoActvity"></activity>
+        <activity android:name=".ui.power.PowerActivity" />
+        <activity android:name=".ui.log.LogActivity" />
         <activity android:name=".ui.log.LogListActvity" />
         <activity android:name=".ui.process.ProcessActivity" />
         <activity android:name=".ui.MainActivity">

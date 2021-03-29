@@ -27,7 +27,7 @@
             android:textSize="20dp"
             android:fontFamily="sans-serif-black"
             android:textColor="#ffff"
-            android:text="Hasil Pencarian"
+            android:text="Log's"
             />
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView

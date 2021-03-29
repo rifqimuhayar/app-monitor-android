@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_marginBottom="20dp"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:textSize="15dp"
+            android:fontFamily="@font/segoeui_semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Host Name"
+            />
+        <TextView
+            android:id="@+id/hostname"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:textAlignment="textEnd"
+            android:layout_height="wrap_content"
+            android:textColor="#171717"
+            android:text="Host Name"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:textSize="15dp"
+            android:fontFamily="@font/segoeui_semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Os Name"
+            />
+        <TextView
+            android:id="@+id/osName"
+            android:textSize="15dp"
+            android:textColor="#171717"
+            android:layout_width="match_parent"
+            android:textAlignment="textEnd"
+            android:layout_height="wrap_content"
+            android:text="Host Name"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:textSize="15dp"
+            android:fontFamily="@font/segoeui_semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Os Version"
+            />
+        <TextView
+            android:id="@+id/osVersion"
+            android:textSize="15dp"
+            android:textColor="#171717"
+            android:layout_width="match_parent"
+            android:textAlignment="textEnd"
+            android:layout_height="wrap_content"
+            android:text="Host Name"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:textSize="15dp"
+            android:fontFamily="@font/segoeui_semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registered Owner"
+            />
+        <TextView
+            android:id="@+id/owner"
+            android:textSize="15dp"
+            android:textColor="#171717"
+            android:layout_width="match_parent"
+            android:textAlignment="textEnd"
+            android:layout_height="wrap_content"
+            android:text="Host Name"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:textSize="15dp"
+            android:fontFamily="@font/segoeui_semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="System Type"
+            />
+        <TextView
+            android:id="@+id/systemType"
+            android:textSize="15dp"
+            android:textColor="#171717"
+            android:layout_width="match_parent"
+            android:textAlignment="textEnd"
+            android:layout_height="wrap_content"
+            android:text="Host Name"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:textSize="15dp"
+            android:fontFamily="@font/segoeui_semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Procesor(s)"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/procesor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/content_component"
+            tools:itemCount="3"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:textSize="15dp"
+            android:fontFamily="@font/segoeui_semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hotfix(s)    "
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/hotfix"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/content_component"
+            tools:itemCount="3"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:textSize="15dp"
+            android:fontFamily="@font/segoeui_semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Host Name"
+            />
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ProgressBar
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:max="100"
+                android:progress="20"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:textAlignment="textEnd"
+                    android:layout_height="wrap_content"
+                    android:text="6.8 GB"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
