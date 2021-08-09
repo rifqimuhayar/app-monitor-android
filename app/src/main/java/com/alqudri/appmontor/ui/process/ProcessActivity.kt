@@ -3,6 +3,7 @@ package com.alqudri.appmontor.ui.process
 import android.graphics.Typeface
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -11,6 +12,7 @@ import com.alqudri.appmontor.model.process.DataItem
 import com.alqudri.appmontor.utill.hideView
 import ir.androidexception.datatable.model.DataTableHeader
 import ir.androidexception.datatable.model.DataTableRow
+import kotlinx.android.synthetic.main.activity_power.*
 import kotlinx.android.synthetic.main.activity_process.*
 
 class ProcessActivity : AppCompatActivity() {
@@ -36,6 +38,9 @@ class ProcessActivity : AppCompatActivity() {
         var rows = ArrayList<DataTableRow>();
         with(processViewModel) {
             listProcess.observe(this@ProcessActivity, Observer {
+
+                pg_pros.hideView(true)
+                lay_pros.hideView(false)
                 Log.d("jjhjh", "aghsahgsas : " + it.data?.size)
                 for (i in it.data!!.indices) {
                     var data = it.data.get(i)
@@ -54,11 +59,14 @@ class ProcessActivity : AppCompatActivity() {
                 data_table.setRows(rows);
                 data_table.inflate(this@ProcessActivity)
             })
+            error.observe(this@ProcessActivity, Observer {
+//                pg_power.hideView(true)
+
+                pg_pros.hideView(true)
+                lay_pros.hideView(false)
+                Toast.makeText(this@ProcessActivity, it, Toast.LENGTH_SHORT).show()
+            })
         }
-        data_table.setTypeface(Typeface.SANS_SERIF);
-        data_table.setHeader(header);
-        data_table.setRows(rows);
-        data_table.inflate(this)
     }
 
 

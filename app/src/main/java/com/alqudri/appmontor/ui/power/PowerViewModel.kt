@@ -31,12 +31,17 @@ class PowerViewModel : ViewModel() {
     private val _shutdown = MutableLiveData<Power>()
     val shutdown: LiveData<Power> get() = _shutdown
 
+    private val _error = MutableLiveData<String>()
+    val error: LiveData<String> get() = _error
+
     fun restart() {
         val requestData = request.restart()
 
         requestData.enqueue(object : Callback<Power>{
             override fun onFailure(call: Call<Power>, t: Throwable) {
                 Log.d("alijs", "" + t.message)
+
+                _error.postValue(t.message)
             }
 
             override fun onResponse(call: Call<Power>, response: Response<Power>) {
@@ -52,6 +57,8 @@ class PowerViewModel : ViewModel() {
         requestData.enqueue(object : Callback<Power>{
             override fun onFailure(call: Call<Power>, t: Throwable) {
                 Log.d("alijs", "" + t.message)
+
+                _error.postValue(t.message)
             }
 
             override fun onResponse(call: Call<Power>, response: Response<Power>) {
@@ -67,6 +74,8 @@ class PowerViewModel : ViewModel() {
         requestData.enqueue(object : Callback<Power>{
             override fun onFailure(call: Call<Power>, t: Throwable) {
                 Log.d("alijs", "" + t.message)
+
+                _error.postValue(t.message)
             }
 
             override fun onResponse(call: Call<Power>, response: Response<Power>) {

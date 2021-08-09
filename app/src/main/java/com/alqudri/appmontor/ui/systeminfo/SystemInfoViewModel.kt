@@ -15,12 +15,16 @@ class SystemInfoViewModel : ViewModel(){
     private val request = ApiBuilder.buildService(Service::class.java)
     private val _listSystemInfo = MutableLiveData<OsSystem>()
     val listSystemInfo: LiveData<OsSystem> get() = _listSystemInfo
+    private val _error = MutableLiveData<String>()
+    val error: LiveData<String> get() = _error
 
     fun getSystemInfo(){
         val requestData = request.getSystemInfo()
         requestData.enqueue(object : Callback<OsSystem>{
             override fun onFailure(call: Call<OsSystem>, t: Throwable) {
                 Log.d("fucky", ""+t.message)
+
+                _error.postValue(t.message)
             }
 
             override fun onResponse(call: Call<OsSystem>, response: Response<OsSystem>) {

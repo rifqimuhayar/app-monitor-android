@@ -1,0 +1,1365 @@
+Index: app/src/main/java/com/alqudri/appmontor/model/ann/Response.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/alqudri/appmontor/model/ann/Response.kt	(date 1617036615395)
++++ app/src/main/java/com/alqudri/appmontor/model/ann/Response.kt	(date 1617036615395)
+@@ -0,0 +1,120 @@
++package com.alqudri.appmontor.model.ann
++
++import com.google.gson.annotations.SerializedName
++
++data class Response(
++
++	@field:SerializedName("OSManufacturer")
++	val oSManufacturer: String? = null,
++
++	@field:SerializedName("RegisteredOwner")
++	val registeredOwner: String? = null,
++
++	@field:SerializedName("DataExecutionPreventionAvailable")
++	val dataExecutionPreventionAvailable: String? = null,
++
++	@field:SerializedName("OSConfiguration")
++	val oSConfiguration: String? = null,
++
++	@field:SerializedName("SystemLocale")
++	val systemLocale: String? = null,
++
++	@field:SerializedName("RegisteredOrganization")
++	val registeredOrganization: String? = null,
++
++	@field:SerializedName("AvailablePhysicalMemory")
++	val availablePhysicalMemory: String? = null,
++
++	@field:SerializedName("InputLocale")
++	val inputLocale: String? = null,
++
++	@field:SerializedName("OSName")
++	val oSName: String? = null,
++
++	@field:SerializedName("SystemType")
++	val systemType: String? = null,
++
++	@field:SerializedName("PageFileLocation(s)")
++	val pageFileLocationS: String? = null,
++
++	@field:SerializedName("ConnectionName")
++	val connectionName: String? = null,
++
++	@field:SerializedName("OSBuildType")
++	val oSBuildType: String? = null,
++
++	@field:SerializedName("OriginalInstallDate")
++	val originalInstallDate: String? = null,
++
++	@field:SerializedName("OSVersion")
++	val oSVersion: String? = null,
++
++	@field:SerializedName("BIOSVersion")
++	val bIOSVersion: String? = null,
++
++	@field:SerializedName("TotalPhysicalMemory")
++	val totalPhysicalMemory: String? = null,
++
++	@field:SerializedName("LogonServer")
++	val logonServer: String? = null,
++
++	@field:SerializedName("DHCPServer")
++	val dHCPServer: List<String?>? = null,
++
++	@field:SerializedName("VirtualizationEnabledInFirmware")
++	val virtualizationEnabledInFirmware: String? = null,
++
++	@field:SerializedName("HostName")
++	val hostName: String? = null,
++
++	@field:SerializedName("Status")
++	val status: List<String?>? = null,
++
++	@field:SerializedName("DHCPEnabled")
++	val dHCPEnabled: String? = null,
++
++	@field:SerializedName("BootDevice")
++	val bootDevice: String? = null,
++
++	@field:SerializedName("ProductID")
++	val productID: String? = null,
++
++	@field:SerializedName("VirtualMemory")
++	val virtualMemory: String? = null,
++
++	@field:SerializedName("TimeZone")
++	val timeZone: String? = null,
++
++	@field:SerializedName("SystemModel")
++	val systemModel: String? = null,
++
++	@field:SerializedName("Hyper-VRequirements")
++	val hyperVRequirements: String? = null,
++
++	@field:SerializedName("Processor(s)")
++	val processorS: List<String?>? = null,
++
++	@field:SerializedName("Hotfix(s)")
++	val hotfixS: List<String?>? = null,
++
++	@field:SerializedName("SecondLevelAddressTranslation")
++	val secondLevelAddressTranslation: String? = null,
++
++	@field:SerializedName("WindowsDirectory")
++	val windowsDirectory: String? = null,
++
++	@field:SerializedName("SystemBootTime")
++	val systemBootTime: String? = null,
++
++	@field:SerializedName("SystemDirectory")
++	val systemDirectory: String? = null,
++
++	@field:SerializedName("SystemManufacturer")
++	val systemManufacturer: String? = null,
++
++	@field:SerializedName("Domain")
++	val domain: String? = null,
++
++	@field:SerializedName("NetworkCard(s)")
++	val networkCardS: List<String?>? = null
++)
+Index: app/src/main/java/com/alqudri/appmontor/model/ossystem/OsSystem.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/alqudri/appmontor/model/ossystem/OsSystem.kt	(revision a7d50648ef418a15967665333604b19a6508c204)
++++ app/src/main/java/com/alqudri/appmontor/model/ossystem/OsSystem.kt	(date 1617036653489)
+@@ -68,7 +68,7 @@
+ 	val hostName: String? = null,
+ 
+ 	@field:SerializedName("Status")
+-	val status: String? = null,
++	val status: List<String?>? = null,
+ 
+ 	@field:SerializedName("DHCPEnabled")
+ 	val dHCPEnabled: String? = null,
+Index: app/src/main/res/layout/activity_power.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_power.xml	(revision a7d50648ef418a15967665333604b19a6508c204)
++++ app/src/main/res/layout/activity_power.xml	(date 1617032208130)
+@@ -1,12 +1,17 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:orientation="vertical"
+     android:layout_height="match_parent"
+     tools:context=".ui.power.PowerActivity">
+-
++<LinearLayout
++    android:visibility="gone"
++    android:id="@+id/lay_lin"
++    android:orientation="vertical"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent">
+     <View
+         android:id="@+id/v"
+         android:visibility="gone"
+@@ -87,4 +92,15 @@
+             app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+     </androidx.constraintlayout.widget.ConstraintLayout>
+ 
+-</LinearLayout>
+\ No newline at end of file
++</LinearLayout>
++
++
++    <ProgressBar
++        android:id="@+id/pg_power"
++        android:layout_width="70dp"
++        android:layout_height="70dp"
++        app:layout_constraintBottom_toBottomOf="@+id/lay_lin"
++        app:layout_constraintEnd_toEndOf="@+id/lay_lin"
++        app:layout_constraintStart_toStartOf="@+id/lay_lin"
++        app:layout_constraintTop_toTopOf="parent" />
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_log.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_log.xml	(revision a7d50648ef418a15967665333604b19a6508c204)
++++ app/src/main/res/layout/activity_log.xml	(date 1617035407075)
+@@ -1,59 +1,75 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:orientation="vertical"
+     android:layout_height="match_parent">
+     <LinearLayout
+-        android:layout_width="match_parent"
+-        android:layout_height="wrap_content"
+-        android:background="#00B8D4"
+-        android:gravity="center_vertical"
+-        android:orientation="horizontal"
+-        android:paddingTop="15dp"
+-        android:paddingBottom="15dp"
+-        >
+-        <ImageView
+-            android:layout_width="30dp"
+-            android:layout_height="30dp"
+-            android:layout_marginLeft="10dp"
+-            android:src="@drawable/ic_baseline_arrow_back_24"
+-            />
+-        <TextView
+-            android:id="@+id/name_app"
+-            android:layout_marginLeft="10dp"
+-            android:layout_width="match_parent"
+-            android:layout_height="wrap_content"
+-            android:textSize="20dp"
+-            android:fontFamily="sans-serif-black"
+-            android:textColor="#ffff"
+-            android:text="Hasil Pencarian"
+-            />
+-    </LinearLayout>
+-    <ScrollView
+-        android:id="@+id/content_hide"
+-        android:visibility="gone"
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent">
+-        <LinearLayout
+-            android:layout_width="match_parent"
+-            android:layout_height="wrap_content"
+-            android:orientation="vertical">
+-            <TextView
+-                android:id="@+id/non_parse_message"
+-                android:padding="20dp"
+-                android:layout_width="match_parent"
+-                android:layout_height="wrap_content"
+-                android:text="Installing Apache HTTP Server 2.x with DomainName = example.com ServerName = www.example.com ServerAdmin = admin@example.com ServerPort = 80 ServerSslPort = 443 ServerRoot = c:/Apache24 Rewrote docs/conf/extra/httpd-autoindex.conf.in to c:/Apache24/conf/original/extra/httpd-autoindex.conf Rewrote docs/conf/extra/httpd-default.conf.in to c:/Apache24/conf/original/extra/httpd-default.conf Rewrote docs/conf/extra/httpd-ssl.conf.in to c:/Apache24/conf/original/extra/httpd-ssl.conf Rewrote docs/conf/extra/httpd-multilang-errordoc.conf.in to c:/Apache24/conf/original/extra/httpd-multilang-errordoc.conf Rewrote docs/conf/extra/httpd-info.conf.in to c:/Apache24/conf/original/extra/httpd-info.conf Rewrote docs/conf/extra/httpd-userdir.conf.in to c:/Apache24/conf/original/extra/httpd-userdir.conf Rewrote docs/conf/extra/httpd-mpm.conf.in to c:/Apache24/conf/original/extra/httpd-mpm.conf Rewrote docs/conf/httpd.conf.in to c:/Apache24/conf/original/httpd.conf Rewrote docs/conf/extra/proxy-html.conf.in to c:/Apache24/conf/original/extra/proxy-html.conf Rewrote docs/conf/extra/httpd-vhosts.conf.in to c:/Apache24/conf/original/extra/httpd-vhosts.conf Rewrote docs/conf/extra/httpd-dav.conf.in to c:/Apache24/conf/original/extra/httpd-dav.conf Rewrote docs/conf/extra/httpd-languages.conf.in to c:/Apache24/conf/original/extra/httpd-languages.conf Rewrote docs/conf/extra/httpd-manual.conf.in to c:/Apache24/conf/original/extra/httpd-manual.conf Duplicated c:/Apache24/conf/original/extra/httpd-autoindex.conf to c:/Apache24/conf/extra/httpd-autoindex.conf Duplicated c:/Apache24/conf/original/extra/httpd-default.conf to c:/Apache24/conf/extra/httpd-default.conf Duplicated c:/Apache24/conf/original/extra/httpd-ssl.conf to c:/Apache24/conf/extra/httpd-ssl.conf Duplicated c:/Apache24/conf/original/extra/httpd-multilang-errordoc.conf to c:/Apache24/conf/extra/httpd-multilang-errordoc.conf Duplicated c:/Apache24/conf/original/extra/httpd-info.conf to c:/Apache24/conf/extra/httpd-info.conf Duplicated c:/Apache24/conf/original/extra/httpd-userdir.conf to c:/Apache24/conf/extra/httpd-userdir.conf Duplicated c:/Apache24/conf/original/extra/httpd-mpm.conf to c:/Apache24/conf/extra/httpd-mpm.conf Duplicated c:/Apache24/conf/original/httpd.conf to c:/Apache24/conf/httpd.conf Duplicated c:/Apache24/conf/original/magic to c:/Apache24/conf/magic Duplicated c:/Apache24/conf/original/charset.conv to c:/Apache24/conf/charset.conv Duplicated c:/Apache24/conf/original/extra/proxy-html.conf to c:/Apache24/conf/extra/proxy-html.conf Duplicated c:/Apache24/conf/original/extra/httpd-vhosts.conf to c:/Apache24/conf/extra/httpd-vhosts.conf Duplicated c:/Apache24/conf/original/extra/httpd-dav.conf to c:/Apache24/conf/extra/httpd-dav.conf Duplicated c:/Apache24/conf/original/mime.types to c:/Apache24/conf/mime.types Duplicated c:/Apache24/conf/original/extra/httpd-languages.conf to c:/Apache24/conf/extra/httpd-languages.conf Duplicated c:/Apache24/conf/original/extra/httpd-manual.conf to c:/Apache24/conf/extra/httpd-manual.conf"
+-                />
+-        </LinearLayout>
+-    </ScrollView>
+-    <androidx.recyclerview.widget.RecyclerView
+-        android:id="@+id/rv_log"
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        tools:listitem="@layout/content_detail_log"
+-        />
++        android:visibility="gone"
++        android:id="@+id/lay_log"
++        android:layout_width="match_parent"
++        android:orientation="vertical"
++        android:layout_height="match_parent">
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:background="#00B8D4"
++            android:gravity="center_vertical"
++            android:orientation="horizontal"
++            android:paddingTop="15dp"
++            android:paddingBottom="15dp"
++            >
++            <ImageView
++                android:layout_width="30dp"
++                android:layout_height="30dp"
++                android:layout_marginLeft="10dp"
++                android:src="@drawable/ic_baseline_arrow_back_24"
++                />
++            <TextView
++                android:id="@+id/name_app"
++                android:layout_marginLeft="10dp"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:textSize="20dp"
++                android:fontFamily="sans-serif-black"
++                android:textColor="#ffff"
++                android:text="Hasil Pencarian"
++                />
++        </LinearLayout>
++        <ScrollView
++            android:id="@+id/content_hide"
++            android:visibility="gone"
++            android:layout_width="match_parent"
++            android:layout_height="match_parent">
++            <LinearLayout
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:orientation="vertical">
++                <TextView
++                    android:id="@+id/non_parse_message"
++                    android:padding="20dp"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:text="Installing Apache HTTP Server 2.x with DomainName = example.com ServerName = www.example.com ServerAdmin = admin@example.com ServerPort = 80 ServerSslPort = 443 ServerRoot = c:/Apache24 Rewrote docs/conf/extra/httpd-autoindex.conf.in to c:/Apache24/conf/original/extra/httpd-autoindex.conf Rewrote docs/conf/extra/httpd-default.conf.in to c:/Apache24/conf/original/extra/httpd-default.conf Rewrote docs/conf/extra/httpd-ssl.conf.in to c:/Apache24/conf/original/extra/httpd-ssl.conf Rewrote docs/conf/extra/httpd-multilang-errordoc.conf.in to c:/Apache24/conf/original/extra/httpd-multilang-errordoc.conf Rewrote docs/conf/extra/httpd-info.conf.in to c:/Apache24/conf/original/extra/httpd-info.conf Rewrote docs/conf/extra/httpd-userdir.conf.in to c:/Apache24/conf/original/extra/httpd-userdir.conf Rewrote docs/conf/extra/httpd-mpm.conf.in to c:/Apache24/conf/original/extra/httpd-mpm.conf Rewrote docs/conf/httpd.conf.in to c:/Apache24/conf/original/httpd.conf Rewrote docs/conf/extra/proxy-html.conf.in to c:/Apache24/conf/original/extra/proxy-html.conf Rewrote docs/conf/extra/httpd-vhosts.conf.in to c:/Apache24/conf/original/extra/httpd-vhosts.conf Rewrote docs/conf/extra/httpd-dav.conf.in to c:/Apache24/conf/original/extra/httpd-dav.conf Rewrote docs/conf/extra/httpd-languages.conf.in to c:/Apache24/conf/original/extra/httpd-languages.conf Rewrote docs/conf/extra/httpd-manual.conf.in to c:/Apache24/conf/original/extra/httpd-manual.conf Duplicated c:/Apache24/conf/original/extra/httpd-autoindex.conf to c:/Apache24/conf/extra/httpd-autoindex.conf Duplicated c:/Apache24/conf/original/extra/httpd-default.conf to c:/Apache24/conf/extra/httpd-default.conf Duplicated c:/Apache24/conf/original/extra/httpd-ssl.conf to c:/Apache24/conf/extra/httpd-ssl.conf Duplicated c:/Apache24/conf/original/extra/httpd-multilang-errordoc.conf to c:/Apache24/conf/extra/httpd-multilang-errordoc.conf Duplicated c:/Apache24/conf/original/extra/httpd-info.conf to c:/Apache24/conf/extra/httpd-info.conf Duplicated c:/Apache24/conf/original/extra/httpd-userdir.conf to c:/Apache24/conf/extra/httpd-userdir.conf Duplicated c:/Apache24/conf/original/extra/httpd-mpm.conf to c:/Apache24/conf/extra/httpd-mpm.conf Duplicated c:/Apache24/conf/original/httpd.conf to c:/Apache24/conf/httpd.conf Duplicated c:/Apache24/conf/original/magic to c:/Apache24/conf/magic Duplicated c:/Apache24/conf/original/charset.conv to c:/Apache24/conf/charset.conv Duplicated c:/Apache24/conf/original/extra/proxy-html.conf to c:/Apache24/conf/extra/proxy-html.conf Duplicated c:/Apache24/conf/original/extra/httpd-vhosts.conf to c:/Apache24/conf/extra/httpd-vhosts.conf Duplicated c:/Apache24/conf/original/extra/httpd-dav.conf to c:/Apache24/conf/extra/httpd-dav.conf Duplicated c:/Apache24/conf/original/mime.types to c:/Apache24/conf/mime.types Duplicated c:/Apache24/conf/original/extra/httpd-languages.conf to c:/Apache24/conf/extra/httpd-languages.conf Duplicated c:/Apache24/conf/original/extra/httpd-manual.conf to c:/Apache24/conf/extra/httpd-manual.conf"
++                    />
++            </LinearLayout>
++        </ScrollView>
++        <androidx.recyclerview.widget.RecyclerView
++            android:id="@+id/rv_log"
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            tools:listitem="@layout/content_detail_log"
++            />
+ 
+-</LinearLayout>
+\ No newline at end of file
++    </LinearLayout>
++
++    <ProgressBar
++        android:id="@+id/pg_log"
++        android:layout_width="70dp"
++        android:layout_height="70dp"
++        app:layout_constraintBottom_toBottomOf="@+id/lay_log"
++        app:layout_constraintEnd_toEndOf="@+id/lay_log"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_log_list_actvity.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_log_list_actvity.xml	(revision a7d50648ef418a15967665333604b19a6508c204)
++++ app/src/main/res/layout/activity_log_list_actvity.xml	(date 1617035407003)
+@@ -1,40 +1,56 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:orientation="vertical"
+     android:layout_height="match_parent">
+     <LinearLayout
+-        android:layout_width="match_parent"
+-        android:layout_height="wrap_content"
+-        android:background="#00B8D4"
+-        android:gravity="center_vertical"
+-        android:orientation="horizontal"
+-        android:paddingTop="15dp"
+-        android:paddingBottom="15dp"
+-        >
+-        <ImageView
+-            android:layout_width="30dp"
+-            android:layout_height="30dp"
+-            android:layout_marginLeft="10dp"
+-            android:src="@drawable/ic_baseline_arrow_back_24"
+-            />
+-        <TextView
+-            android:layout_marginLeft="10dp"
+-            android:layout_width="match_parent"
+-            android:layout_height="wrap_content"
+-            android:textSize="20dp"
+-            android:fontFamily="sans-serif-black"
+-            android:textColor="#ffff"
+-            android:text="Log's"
+-            />
+-    </LinearLayout>
+-    <androidx.recyclerview.widget.RecyclerView
+-        android:id="@+id/rv_log"
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        tools:listitem="@layout/content_process"
+-        />
++        android:visibility="gone"
++        android:id="@+id/lay_lis"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:orientation="vertical">
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:background="#00B8D4"
++            android:gravity="center_vertical"
++            android:orientation="horizontal"
++            android:paddingTop="15dp"
++            android:paddingBottom="15dp"
++            >
++            <ImageView
++                android:layout_width="30dp"
++                android:layout_height="30dp"
++                android:layout_marginLeft="10dp"
++                android:src="@drawable/ic_baseline_arrow_back_24"
++                />
++            <TextView
++                android:layout_marginLeft="10dp"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:textSize="20dp"
++                android:fontFamily="sans-serif-black"
++                android:textColor="#ffff"
++                android:text="Log's"
++                />
++        </LinearLayout>
++        <androidx.recyclerview.widget.RecyclerView
++            android:id="@+id/rv_log"
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            tools:listitem="@layout/content_process"
++            />
++    </LinearLayout>
++
++    <ProgressBar
++        android:id="@+id/pg_list"
++        android:layout_width="70dp"
++        android:layout_height="70dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
+ 
+-</LinearLayout>
+\ No newline at end of file
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/alqudri/appmontor/ui/systeminfo/InfoActvity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/alqudri/appmontor/ui/systeminfo/InfoActvity.kt	(revision a7d50648ef418a15967665333604b19a6508c204)
++++ app/src/main/java/com/alqudri/appmontor/ui/systeminfo/InfoActvity.kt	(date 1627869498314)
+@@ -4,12 +4,14 @@
+ import android.util.Log
+ import android.view.LayoutInflater
+ import android.widget.LinearLayout
++import android.widget.Toast
+ import androidx.appcompat.app.AppCompatActivity
+ import androidx.lifecycle.Observer
+ import androidx.lifecycle.ViewModelProvider
+ import androidx.recyclerview.widget.LinearLayoutManager
+ import com.alqudri.appmontor.R
+ import com.alqudri.appmontor.adapter.ComponentAdapter
++import com.alqudri.appmontor.utill.hideView
+ import com.google.gson.Gson
+ import kotlinx.android.synthetic.main.activity_info_actvity.*
+ import kotlinx.android.synthetic.main.include_system_info.view.*
+@@ -38,8 +40,32 @@
+                     procesor.adapter = ComponentAdapter(it.processorS as List<String>)
+                     hotfix.layoutManager = LinearLayoutManager(this@InfoActvity)
+                     hotfix.adapter = ComponentAdapter(it.hotfixS as List<String>)
++                    linearLayout2.hideView(false)
++                    pg_info.hideView(true)
++                }
++
++                with(lay){
++                    hostname.text = it.hostName
++                    osName.text = it.oSName
++                    osVersion.text = it.oSVersion
++                    owner.text = it.registeredOwner
++                    systemType.text = it.systemType
++                    val g = Gson()
++                    Log.d("fuck",""+g.toJson(it))
++                    procesor.layoutManager = LinearLayoutManager(this@InfoActvity)
++                    procesor.adapter = ComponentAdapter(it.processorS as List<String>)
++                    hotfix.layoutManager = LinearLayoutManager(this@InfoActvity)
++                    hotfix.adapter = ComponentAdapter(it.hotfixS as List<String>)
++                    linearLayout2.hideView(false)
++                    pg_info.hideView(true)
+                 }
+             })
++
++            error.observe(this@InfoActvity, Observer {
++                pg_info.hideView(true)
++               Toast.makeText(this@InfoActvity, it, Toast.LENGTH_SHORT).show()
++                finish()
++            })
+         }
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_process.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_process.xml	(revision a7d50648ef418a15967665333604b19a6508c204)
++++ app/src/main/res/layout/activity_process.xml	(date 1617036314123)
+@@ -1,62 +1,78 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:orientation="vertical"
+     android:layout_height="match_parent">
+     <LinearLayout
+-        android:layout_width="match_parent"
+-        android:layout_height="wrap_content"
+-        android:background="#00B8D4"
+-        android:gravity="center_vertical"
+-        android:orientation="horizontal"
+-        android:paddingTop="15dp"
+-        android:paddingBottom="15dp"
+-        >
+-        <ImageView
+-            android:layout_width="30dp"
+-            android:layout_height="30dp"
+-            android:layout_marginLeft="10dp"
+-            android:src="@drawable/ic_baseline_arrow_back_24"
+-            />
+-        <TextView
+-            android:layout_marginLeft="10dp"
+-            android:layout_width="match_parent"
+-            android:layout_height="wrap_content"
+-            android:textSize="20dp"
+-            android:fontFamily="sans-serif-black"
+-            android:textColor="#ffff"
+-            android:text="Process Services And APP"
+-            />
+-    </LinearLayout>
+-    <View
+-        android:id="@+id/v"
+-        android:visibility="gone"
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"/>
+-    <ir.androidexception.datatable.DataTable
+-        android:id="@+id/data_table"
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:layout_margin="8dp"
+-        app:header_gravity="center"
+-        app:row_gravity="center"
+-        app:header_vertical_padding="16dp"
+-        app:header_horizontal_padding="0dp"
+-        app:row_vertical_padding="5dp"
+-        app:header_text_size="5sp"
+-        app:row_text_size="6sp"
+-        app:row_text_color="#252525"
+-        app:header_text_color="#292929"
+-        app:row_background_color="#fff"
+-        app:header_background_color="#8c7eba"
+-        app:persian_number="false"
+-        app:corner_radius="8dp"
+-        app:direction="ltr"
+-        app:shadow="8dp"/>
++        android:visibility="gone"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:orientation="vertical"
++        android:id="@+id/lay_pros">
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:background="#00B8D4"
++            android:gravity="center_vertical"
++            android:orientation="horizontal"
++            android:paddingTop="15dp"
++            android:paddingBottom="15dp"
++            >
++            <ImageView
++                android:layout_width="30dp"
++                android:layout_height="30dp"
++                android:layout_marginLeft="10dp"
++                android:src="@drawable/ic_baseline_arrow_back_24"
++                />
++            <TextView
++                android:layout_marginLeft="10dp"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:textSize="20dp"
++                android:fontFamily="sans-serif-black"
++                android:textColor="#ffff"
++                android:text="Process Services And APP"
++                />
++        </LinearLayout>
++        <View
++            android:id="@+id/v"
++            android:visibility="gone"
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"/>
++        <ir.androidexception.datatable.DataTable
++            android:id="@+id/data_table"
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            android:layout_margin="8dp"
++            app:header_gravity="center"
++            app:row_gravity="center"
++            app:header_vertical_padding="16dp"
++            app:header_horizontal_padding="0dp"
++            app:row_vertical_padding="5dp"
++            app:header_text_size="5sp"
++            app:row_text_size="6sp"
++            app:row_text_color="#252525"
++            app:header_text_color="#292929"
++            app:row_background_color="#fff"
++            app:header_background_color="#8c7eba"
++            app:persian_number="false"
++            app:corner_radius="8dp"
++            app:direction="ltr"
++            app:shadow="8dp"/>
+ 
+ 
++    </LinearLayout>
++
++    <ProgressBar
++        android:id="@+id/pg_pros"
++        android:layout_width="70dp"
++        android:layout_height="70dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
+ <!--    <com.evrencoskun.tableview.TableView-->
+ <!--        android:id="@+id/tableview"-->
+ <!--        android:layout_width="match_parent"-->
+@@ -69,4 +85,4 @@
+ <!--    </com.evrencoskun.tableview.TableView>-->
+ 
+ 
+-</LinearLayout>
+\ No newline at end of file
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: projectFilesBackup/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- projectFilesBackup/.idea/workspace.xml	(date 1617036897725)
++++ projectFilesBackup/.idea/workspace.xml	(date 1617036897725)
+@@ -0,0 +1,232 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="AndroidLayouts">
++    <shared>
++      <config />
++    </shared>
++  </component>
++  <component name="AndroidLogFilters">
++    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="htt" />
++    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
++    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
++  </component>
++  <component name="ChangeListManager">
++    <list default="true" id="8086e7b6-3853-4dca-b32e-4dbbce98d8c1" name="Default Changelist" comment="">
++      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/model/ann/Response.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/helper/Static.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/helper/Static.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/model/ossystem/OsSystem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/model/ossystem/OsSystem.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/ui/log/LogActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/ui/log/LogActivity.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/ui/log/LogListActvity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/ui/log/LogListActvity.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/ui/log/LogViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/ui/log/LogViewModel.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/ui/power/PowerActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/ui/power/PowerActivity.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/ui/power/PowerViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/ui/power/PowerViewModel.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/ui/process/ProcessActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/ui/process/ProcessActivity.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/ui/process/ProcessViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/ui/process/ProcessViewModel.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/ui/systeminfo/InfoActvity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/ui/systeminfo/InfoActvity.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/ui/systeminfo/SystemInfoViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/alqudri/appmontor/ui/systeminfo/SystemInfoViewModel.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_info_actvity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_info_actvity.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_log.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_log.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_log_list_actvity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_log_list_actvity.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_power.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_power.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_process.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_process.xml" afterDir="false" />
++    </list>
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="ExecutionTargetManager" SELECTED_TARGET="4c38d05f7d84" />
++  <component name="ExternalProjectsData">
++    <projectState path="$PROJECT_DIR$">
++      <ProjectState />
++    </projectState>
++  </component>
++  <component name="ExternalProjectsManager">
++    <system id="GRADLE">
++      <state>
++        <projects_view />
++      </state>
++    </system>
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="valueResourceFile" />
++        <option value="Class" />
++        <option value="layoutResourceFile" />
++        <option value="Kotlin File" />
++      </list>
++    </option>
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="master" />
++      </map>
++    </option>
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="ProjectId" id="1pkL6A7x85u4TBpyeXHbb0JIjOJ" />
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
++    <ConfirmationsSetting value="2" id="Add" />
++  </component>
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showExcludedFiles" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent">
++    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
++    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
++    <property name="android.project.structure.last.selected" value="SDK Location" />
++    <property name="android.project.structure.proportion" value="0.15" />
++    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
++    <property name="settings.editor.selected.configurable" value="settings.github" />
++  </component>
++  <component name="RecentsManager">
++    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
++      <recent name="com.alqudri.appmontor.model.ossystem" />
++      <recent name="com.alqudri.appmontor.ui" />
++    </key>
++    <key name="CopyFile.RECENT_KEYS">
++      <recent name="D:\Al Qudri\DicodingMade\AppMontor\app\src\main\res\layout" />
++    </key>
++    <key name="android.template.-265897438">
++      <recent name="com.alqudri.appmontor.ui.log" />
++    </key>
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="D:\Al Qudri\DicodingMade\AppMontor\app\src\main\java\com\alqudri\appmontor\model\process" />
++      <recent name="D:\Al Qudri\DicodingMade\AppMontor\app\src\main\java\com\alqudri\appmontor\model\log" />
++    </key>
++    <key name="android.template.-2100464784">
++      <recent name="com.alqudri.appmontor.ui.systeminfo" />
++    </key>
++    <key name="android.template.-1467407456">
++      <recent name="com.alqudri.appmontor.ui.process" />
++    </key>
++    <key name="android.template.1520599099">
++      <recent name="com.alqudri.appmontor.ui.log" />
++    </key>
++    <key name="android.template.1849362481">
++      <recent name="com.alqudri.appmontor.ui.power" />
++    </key>
++  </component>
++  <component name="RunManager" selected="Android App.app">
++    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
++      <option name="TEST_OBJECT" value="class" />
++      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
++      <method v="2">
++        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
++      <module name="app" />
++      <option name="DEPLOY" value="true" />
++      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
++      <option name="DEPLOY_AS_INSTANT" value="false" />
++      <option name="ARTIFACT_NAME" value="" />
++      <option name="PM_INSTALL_OPTIONS" value="" />
++      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
++      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
++      <option name="MODE" value="default_activity" />
++      <option name="CLEAR_LOGCAT" value="false" />
++      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
++      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
++      <option name="FORCE_STOP_RUNNING_APP" value="true" />
++      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
++      <option name="DEBUGGER_TYPE" value="Java" />
++      <Java />
++      <Profilers>
++        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
++        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
++        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
++      </Profilers>
++      <option name="DEEP_LINK" value="" />
++      <option name="ACTIVITY_CLASS" value="" />
++      <method v="2">
++        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="ExampleUnitTest.main" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="app" />
++      <option name="PACKAGE_NAME" value="com.alqudri.appmontor" />
++      <option name="MAIN_CLASS_NAME" value="com.alqudri.appmontor.ExampleUnitTest" />
++      <option name="METHOD_NAME" value="main" />
++      <option name="TEST_OBJECT" value="method" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="ExampleUnitTest.main" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="app" />
++      <option name="PACKAGE_NAME" value="com.alqudri.appmontor" />
++      <option name="MAIN_CLASS_NAME" value="com.alqudri.appmontor.ExampleUnitTest" />
++      <option name="METHOD_NAME" value="main" />
++      <option name="TEST_OBJECT" value="method" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++  </component>
++  <component name="VcsManagerConfiguration">
++    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
++    <MESSAGE value="first commit" />
++    <MESSAGE value="second commit" />
++    <option name="LAST_COMMIT_MESSAGE" value="second commit" />
++  </component>
++  <component name="WindowStateProjectService">
++    <state x="474" y="100" key="#com.intellij.ide.util.MemberChooser" timestamp="1616922311995">
++      <screen x="0" y="0" width="1366" height="768" />
++    </state>
++    <state x="474" y="100" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768@0.0.1366.768" timestamp="1616922311995" />
++    <state x="462" y="36" width="470" height="695" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1615746912926">
++      <screen x="0" y="0" width="1366" height="768" />
++    </state>
++    <state x="462" y="36" width="470" height="695" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1615746912926" />
++    <state x="263" y="139" key="AndroidCreateResourceFileDialog" timestamp="1616916133571">
++      <screen x="0" y="0" width="1366" height="768" />
++    </state>
++    <state x="263" y="139" key="AndroidCreateResourceFileDialog/0.0.1366.768@0.0.1366.768" timestamp="1616916133571" />
++    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1616988041637">
++      <screen x="0" y="0" width="1366" height="768" />
++    </state>
++    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1616988041637" />
++    <state x="463" y="125" key="FileChooserDialogImpl" timestamp="1615828912701">
++      <screen x="0" y="0" width="1366" height="768" />
++    </state>
++    <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1615828912701" />
++    <state width="1306" height="272" key="GridCell.Tab.0.bottom" timestamp="1617036571471">
++      <screen x="0" y="0" width="1366" height="768" />
++    </state>
++    <state width="1306" height="272" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1617036571471" />
++    <state width="1306" height="272" key="GridCell.Tab.0.center" timestamp="1617036571471">
++      <screen x="0" y="0" width="1366" height="768" />
++    </state>
++    <state width="1306" height="272" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1617036571471" />
++    <state width="1306" height="272" key="GridCell.Tab.0.left" timestamp="1617036571470">
++      <screen x="0" y="0" width="1366" height="768" />
++    </state>
++    <state width="1306" height="272" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1617036571470" />
++    <state width="1306" height="272" key="GridCell.Tab.0.right" timestamp="1617036571471">
++      <screen x="0" y="0" width="1366" height="768" />
++    </state>
++    <state width="1306" height="272" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1617036571471" />
++    <state x="184" y="26" key="SettingsEditor" timestamp="1615828880835">
++      <screen x="0" y="0" width="1366" height="768" />
++    </state>
++    <state x="184" y="26" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1615828880835" />
++    <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1616988223890">
++      <screen x="0" y="0" width="1366" height="768" />
++    </state>
++    <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1616988223890" />
++    <state x="379" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1616987984589">
++      <screen x="0" y="0" width="1366" height="768" />
++    </state>
++    <state x="379" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1616987984589" />
++    <state x="339" y="174" key="run.anything.popup" timestamp="1615804489448">
++      <screen x="0" y="0" width="1366" height="768" />
++    </state>
++    <state x="339" y="174" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1615804489448" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/java/com/alqudri/appmontor/ui/process/ProcessActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/alqudri/appmontor/ui/process/ProcessActivity.kt	(revision a7d50648ef418a15967665333604b19a6508c204)
++++ app/src/main/java/com/alqudri/appmontor/ui/process/ProcessActivity.kt	(date 1617082594453)
+@@ -3,6 +3,7 @@
+ import android.graphics.Typeface
+ import android.os.Bundle
+ import android.util.Log
++import android.widget.Toast
+ import androidx.appcompat.app.AppCompatActivity
+ import androidx.lifecycle.Observer
+ import androidx.lifecycle.ViewModelProvider
+@@ -11,6 +12,7 @@
+ import com.alqudri.appmontor.utill.hideView
+ import ir.androidexception.datatable.model.DataTableHeader
+ import ir.androidexception.datatable.model.DataTableRow
++import kotlinx.android.synthetic.main.activity_power.*
+ import kotlinx.android.synthetic.main.activity_process.*
+ 
+ class ProcessActivity : AppCompatActivity() {
+@@ -36,6 +38,9 @@
+         var rows = ArrayList<DataTableRow>();
+         with(processViewModel) {
+             listProcess.observe(this@ProcessActivity, Observer {
++
++                pg_pros.hideView(true)
++                lay_pros.hideView(false)
+                 Log.d("jjhjh", "aghsahgsas : " + it.data?.size)
+                 for (i in it.data!!.indices) {
+                     var data = it.data.get(i)
+@@ -54,11 +59,14 @@
+                 data_table.setRows(rows);
+                 data_table.inflate(this@ProcessActivity)
+             })
++            error.observe(this@ProcessActivity, Observer {
++//                pg_power.hideView(true)
++
++                pg_pros.hideView(true)
++                lay_pros.hideView(false)
++                Toast.makeText(this@ProcessActivity, it, Toast.LENGTH_SHORT).show()
++            })
+         }
+-        data_table.setTypeface(Typeface.SANS_SERIF);
+-        data_table.setHeader(header);
+-        data_table.setRows(rows);
+-        data_table.inflate(this)
+     }
+ 
+ 
+Index: app/src/main/res/layout/activity_info_actvity.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_info_actvity.xml	(revision a7d50648ef418a15967665333604b19a6508c204)
++++ app/src/main/res/layout/activity_info_actvity.xml	(date 1617032207829)
+@@ -1,68 +1,88 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:orientation="vertical"
+     tools:context=".ui.systeminfo.InfoActvity">
++
+     <LinearLayout
++        android:visibility="gone"
++        android:id="@+id/linearLayout2"
+         android:layout_width="match_parent"
+-        android:layout_height="wrap_content"
+-        android:background="#00B8D4"
+-        android:gravity="center_vertical"
+-        android:orientation="horizontal"
+-        android:paddingTop="15dp"
+-        android:paddingBottom="15dp"
+-        >
+-        <ImageView
+-            android:layout_width="30dp"
+-            android:layout_height="30dp"
+-            android:layout_marginLeft="10dp"
+-            android:src="@drawable/ic_baseline_arrow_back_24"
+-            />
+-        <TextView
+-            android:layout_marginLeft="10dp"
+-            android:layout_width="match_parent"
+-            android:layout_height="wrap_content"
+-            android:textSize="20dp"
+-            android:fontFamily="sans-serif-black"
+-            android:textColor="#ffff"
+-            android:text="System Info"
+-            />
+-    </LinearLayout>
+-    <ScrollView
+-        android:scrollbars="none"
+-        android:layout_marginLeft="10dp"
+-        android:layout_marginRight="10dp"
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent">
+-        <LinearLayout
+-            android:layout_width="match_parent"
+-            android:layout_height="wrap_content"
+-            android:layout_marginBottom="20dp"
+-            android:orientation="vertical">
+-            <ImageView
+-                android:layout_width="wrap_content"
+-                android:layout_height="300dp"
+-                android:src="@drawable/dribbble"
+-                />
+-            <TextView
+-                android:textSize="30dp"
+-                android:fontFamily="@font/segoeui_bold"
+-                android:layout_width="wrap_content"
+-                android:layout_height="wrap_content"
+-                android:textColor="#373737"
+-                android:text="System Info"
+-                />
+-            <include
+-                android:id="@+id/lay"
+-                android:layout_width="match_parent"
+-                android:layout_height="wrap_content"
+-                android:layout_marginBottom="20dp"
+-                layout="@layout/include_system_info"/>
++        android:layout_height="match_parent"
++        android:orientation="vertical">
++
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:background="#00B8D4"
++            android:gravity="center_vertical"
++            android:orientation="horizontal"
++            android:paddingTop="15dp"
++            android:paddingBottom="15dp">
++
++            <ImageView
++                android:layout_width="30dp"
++                android:layout_height="30dp"
++                android:layout_marginLeft="10dp"
++                android:src="@drawable/ic_baseline_arrow_back_24" />
++
++            <TextView
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_marginLeft="10dp"
++                android:fontFamily="sans-serif-black"
++                android:text="System Info"
++                android:textColor="#ffff"
++                android:textSize="20dp" />
++        </LinearLayout>
++
++        <ScrollView
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            android:layout_marginLeft="10dp"
++            android:layout_marginRight="10dp"
++            android:scrollbars="none">
++
++            <LinearLayout
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_marginBottom="20dp"
++                android:orientation="vertical">
++
++                <ImageView
++                    android:layout_width="wrap_content"
++                    android:layout_height="300dp"
++                    android:src="@drawable/dribbble" />
++
++                <TextView
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:fontFamily="@font/segoeui_bold"
++                    android:text="System Info"
++                    android:textColor="#373737"
++                    android:textSize="30dp" />
++
++                <include
++                    android:id="@+id/lay"
++                    layout="@layout/include_system_info"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:layout_marginBottom="20dp" />
+ 
+ 
+-        </LinearLayout>
+-    </ScrollView>
+-</LinearLayout>
+\ No newline at end of file
++            </LinearLayout>
++        </ScrollView>
++    </LinearLayout>
++
++    <ProgressBar
++        android:id="@+id/pg_info"
++        android:layout_width="45dp"
++        android:layout_height="76dp"
++        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
++        app:layout_constraintTop_toTopOf="@+id/linearLayout2" />
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/alqudri/appmontor/ui/process/ProcessViewModel.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/alqudri/appmontor/ui/process/ProcessViewModel.kt	(revision a7d50648ef418a15967665333604b19a6508c204)
++++ app/src/main/java/com/alqudri/appmontor/ui/process/ProcessViewModel.kt	(date 1617035407113)
+@@ -19,11 +19,15 @@
+     )
+     private val _listProcess = MutableLiveData<GetProcess>()
+     val listProcess: LiveData<GetProcess> get() = _listProcess
++
++    private val _error = MutableLiveData<String>()
++    val error: LiveData<String> get() = _error
+     fun getProcess() {
+         val requestData = request.getProcess()
+         requestData.enqueue(object : Callback<GetProcess> {
+             override fun onFailure(call: Call<GetProcess>, t: Throwable) {
+                 Log.d("model",""+ t.message)
++                _error.postValue(t.message)
+             }
+ 
+             override fun onResponse(call: Call<GetProcess>, response: Response<GetProcess>) {
+Index: app/src/main/java/com/alqudri/appmontor/ui/power/PowerViewModel.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/alqudri/appmontor/ui/power/PowerViewModel.kt	(revision a7d50648ef418a15967665333604b19a6508c204)
++++ app/src/main/java/com/alqudri/appmontor/ui/power/PowerViewModel.kt	(date 1617032208336)
+@@ -31,12 +31,17 @@
+     private val _shutdown = MutableLiveData<Power>()
+     val shutdown: LiveData<Power> get() = _shutdown
+ 
++    private val _error = MutableLiveData<String>()
++    val error: LiveData<String> get() = _error
++
+     fun restart() {
+         val requestData = request.restart()
+ 
+         requestData.enqueue(object : Callback<Power>{
+             override fun onFailure(call: Call<Power>, t: Throwable) {
+                 Log.d("alijs", "" + t.message)
++
++                _error.postValue(t.message)
+             }
+ 
+             override fun onResponse(call: Call<Power>, response: Response<Power>) {
+@@ -52,6 +57,8 @@
+         requestData.enqueue(object : Callback<Power>{
+             override fun onFailure(call: Call<Power>, t: Throwable) {
+                 Log.d("alijs", "" + t.message)
++
++                _error.postValue(t.message)
+             }
+ 
+             override fun onResponse(call: Call<Power>, response: Response<Power>) {
+@@ -67,6 +74,8 @@
+         requestData.enqueue(object : Callback<Power>{
+             override fun onFailure(call: Call<Power>, t: Throwable) {
+                 Log.d("alijs", "" + t.message)
++
++                _error.postValue(t.message)
+             }
+ 
+             override fun onResponse(call: Call<Power>, response: Response<Power>) {
+Index: app/src/main/java/com/alqudri/appmontor/ui/log/LogViewModel.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/alqudri/appmontor/ui/log/LogViewModel.kt	(revision a7d50648ef418a15967665333604b19a6508c204)
++++ app/src/main/java/com/alqudri/appmontor/ui/log/LogViewModel.kt	(date 1617035406892)
+@@ -22,6 +22,8 @@
+     val listLog: LiveData<LogList> get() = _listLog
+     private val _listAccess = MutableLiveData<AccessLog>()
+     val listAcces: LiveData<AccessLog> get() = _listAccess
++    private val _error = MutableLiveData<String>()
++    val error: LiveData<String> get() = _error
+ 
+ 
+     private val _listNonParse = MutableLiveData<NonParseLog>()
+@@ -31,6 +33,7 @@
+         requestData.enqueue(object : Callback<LogList> {
+             override fun onFailure(call: Call<LogList>, t: Throwable) {
+                 Log.d("model",""+ t.message)
++                _error.postValue(t.message)
+             }
+ 
+             override fun onResponse(call: Call<LogList>, response: Response<LogList>) {
+@@ -50,6 +53,7 @@
+         requestData.enqueue(object : Callback<AccessLog> {
+             override fun onFailure(call: Call<AccessLog>, t: Throwable) {
+                 Log.d("model",""+ t.message)
++                _error.postValue(t.message)
+             }
+ 
+             override fun onResponse(call: Call<AccessLog>, response: Response<AccessLog>) {
+@@ -69,6 +73,7 @@
+         requestData.enqueue(object : Callback<NonParseLog> {
+             override fun onFailure(call: Call<NonParseLog>, t: Throwable) {
+                 Log.d("model",""+ t.message)
++                _error.postValue(t.message)
+             }
+ 
+             override fun onResponse(call: Call<NonParseLog>, response: Response<NonParseLog>) {
+Index: app/src/main/java/com/alqudri/appmontor/helper/Static.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/alqudri/appmontor/helper/Static.kt	(revision a7d50648ef418a15967665333604b19a6508c204)
++++ app/src/main/java/com/alqudri/appmontor/helper/Static.kt	(date 1617035445008)
+@@ -1,7 +1,7 @@
+ package com.alqudri.appmontor.helper
+ 
+ object Static {
+-    var BASE_URL  = "http://192.168.100.15/appmontor/public/api/";
++    var BASE_URL  = "http://192.168.43.228/appmontor/public/api/";
+     var ACCESS_LOG = "access.log"
+     var ERROR_LOG = "error.log"
+     var DEFAULT = "default"
+Index: app/src/main/java/com/alqudri/appmontor/ui/log/LogActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/alqudri/appmontor/ui/log/LogActivity.kt	(revision a7d50648ef418a15967665333604b19a6508c204)
++++ app/src/main/java/com/alqudri/appmontor/ui/log/LogActivity.kt	(date 1617035999133)
+@@ -2,6 +2,7 @@
+ 
+ import android.os.Bundle
+ import android.util.Log
++import android.widget.Toast
+ import androidx.appcompat.app.AppCompatActivity
+ import androidx.lifecycle.Observer
+ import androidx.lifecycle.ViewModelProvider
+@@ -12,6 +13,7 @@
+ import com.alqudri.appmontor.utill.hideView
+ import com.google.gson.Gson
+ import kotlinx.android.synthetic.main.activity_log.*
++import kotlinx.android.synthetic.main.activity_power.*
+ 
+ class LogActivity : AppCompatActivity() {
+     override fun onCreate(savedInstanceState: Bundle?) {
+@@ -56,6 +58,8 @@
+                     }
+                 }
+                 Log.d("ahajs", gson.toJson(it))
++                lay_log.hideView(false)
++                pg_log.hideView(true)
+             })
+ 
+             listNonParse.observe(this@LogActivity, Observer {
+@@ -63,6 +67,15 @@
+                 content_hide.hideView(false)
+                 Log.d("ahajs", "gson.toJson(it)")
+                 non_parse_message.text = it.data?.get(0)?.get(0)
++
++                lay_log.hideView(false)
++                pg_log.hideView(true)
++            })
++
++            error.observe(this@LogActivity, Observer {
++                pg_log.hideView(true)
++                Toast.makeText(this@LogActivity, it, Toast.LENGTH_SHORT).show()
++                finish()
+             })
+         }
+ 
+Index: app/src/main/java/com/alqudri/appmontor/ui/log/LogListActvity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/alqudri/appmontor/ui/log/LogListActvity.kt	(revision a7d50648ef418a15967665333604b19a6508c204)
++++ app/src/main/java/com/alqudri/appmontor/ui/log/LogListActvity.kt	(date 1617035999351)
+@@ -2,13 +2,17 @@
+ 
+ import androidx.appcompat.app.AppCompatActivity
+ import android.os.Bundle
++import android.widget.Toast
+ import androidx.lifecycle.Observer
+ import androidx.lifecycle.ViewModelProvider
+ import androidx.recyclerview.widget.LinearLayoutManager
+ import com.alqudri.appmontor.R
+ import com.alqudri.appmontor.adapter.LogListAdapter
+ import com.alqudri.appmontor.model.log.DataItem
++import com.alqudri.appmontor.utill.hideView
++import kotlinx.android.synthetic.main.activity_log.*
+ import kotlinx.android.synthetic.main.activity_log_list_actvity.*
++import kotlinx.android.synthetic.main.activity_log_list_actvity.rv_log
+ 
+ class LogListActvity : AppCompatActivity() {
+     override fun onCreate(savedInstanceState: Bundle?) {
+@@ -22,9 +26,18 @@
+ 
+         logViewModel.getLogList()
+ 
+-        logViewModel.listLog.observe(this, Observer {
+-            rv_log.layoutManager = LinearLayoutManager(this)
+-            rv_log.adapter = LogListAdapter(it.data as List<DataItem>)
+-        })
++        with(logViewModel) {
++            listLog.observe(this@LogListActvity, Observer {
++                rv_log.layoutManager = LinearLayoutManager(this@LogListActvity)
++                rv_log.adapter = LogListAdapter(it.data as List<DataItem>)
++                lay_lis.hideView(false)
++                pg_list.hideView(true)
++            })
++            error.observe(this@LogListActvity, Observer {
++                pg_list.hideView(true)
++                Toast.makeText(this@LogListActvity, it, Toast.LENGTH_SHORT).show()
++                finish()
++            })
++        }
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/alqudri/appmontor/ui/power/PowerActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/alqudri/appmontor/ui/power/PowerActivity.kt	(revision a7d50648ef418a15967665333604b19a6508c204)
++++ app/src/main/java/com/alqudri/appmontor/ui/power/PowerActivity.kt	(date 1617035999308)
+@@ -3,6 +3,7 @@
+ import androidx.appcompat.app.AppCompatActivity
+ import android.os.Bundle
+ import android.util.Log
++import android.widget.Toast
+ import androidx.lifecycle.Observer
+ import androidx.lifecycle.ViewModelProvider
+ import com.alqudri.appmontor.R
+@@ -23,18 +24,34 @@
+ 
+         cardView2.setOnClickListener {
+             powerViewModel.restart()
++            lay_lin.hideView(true)
++            pg_power.hideView(false)
+         }
+ 
++        lay_lin.hideView(false)
++        pg_power.hideView(true)
+         cardView.setOnClickListener {
+             powerViewModel.shutdown()
++            lay_lin.hideView(true)
++            pg_power.hideView(false)
+         }
+         with(powerViewModel){
+             restart.observe(this@PowerActivity, Observer {
+                 Log.d("wtf", "sdjhsd")
++                Toast.makeText(this@PowerActivity, it.message, Toast.LENGTH_SHORT).show()
++
++                lay_lin.hideView(false)
+             })
+ 
+             shutdown.observe(this@PowerActivity, Observer {
+                 Log.d("wtf", "sdjhsd")
++                Toast.makeText(this@PowerActivity, it.message, Toast.LENGTH_SHORT).show()
++                lay_lin.hideView(false)
++                pg_power.hideView(true)
++            })
++            error.observe(this@PowerActivity, Observer {
++                pg_power.hideView(true)
++                Toast.makeText(this@PowerActivity, it, Toast.LENGTH_SHORT).show()
+             })
+         }
+     }
+Index: app/src/main/java/com/alqudri/appmontor/ui/systeminfo/SystemInfoViewModel.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/alqudri/appmontor/ui/systeminfo/SystemInfoViewModel.kt	(revision a7d50648ef418a15967665333604b19a6508c204)
++++ app/src/main/java/com/alqudri/appmontor/ui/systeminfo/SystemInfoViewModel.kt	(date 1617032208020)
+@@ -15,12 +15,16 @@
+     private val request = ApiBuilder.buildService(Service::class.java)
+     private val _listSystemInfo = MutableLiveData<OsSystem>()
+     val listSystemInfo: LiveData<OsSystem> get() = _listSystemInfo
++    private val _error = MutableLiveData<String>()
++    val error: LiveData<String> get() = _error
+ 
+     fun getSystemInfo(){
+         val requestData = request.getSystemInfo()
+         requestData.enqueue(object : Callback<OsSystem>{
+             override fun onFailure(call: Call<OsSystem>, t: Throwable) {
+                 Log.d("fucky", ""+t.message)
++
++                _error.postValue(t.message)
+             }
+ 
+             override fun onResponse(call: Call<OsSystem>, response: Response<OsSystem>) {

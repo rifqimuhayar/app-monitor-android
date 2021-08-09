@@ -2,6 +2,7 @@ package com.alqudri.appmontor.ui.log
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -12,6 +13,7 @@ import com.alqudri.appmontor.helper.Static
 import com.alqudri.appmontor.utill.hideView
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_log.*
+import kotlinx.android.synthetic.main.activity_power.*
 
 class LogActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,6 +58,8 @@ class LogActivity : AppCompatActivity() {
                     }
                 }
                 Log.d("ahajs", gson.toJson(it))
+                lay_log.hideView(false)
+                pg_log.hideView(true)
             })
 
             listNonParse.observe(this@LogActivity, Observer {
@@ -63,6 +67,15 @@ class LogActivity : AppCompatActivity() {
                 content_hide.hideView(false)
                 Log.d("ahajs", "gson.toJson(it)")
                 non_parse_message.text = it.data?.get(0)?.get(0)
+
+                lay_log.hideView(false)
+                pg_log.hideView(true)
+            })
+
+            error.observe(this@LogActivity, Observer {
+                pg_log.hideView(true)
+                Toast.makeText(this@LogActivity, it, Toast.LENGTH_SHORT).show()
+                finish()
             })
         }
 

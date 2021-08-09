@@ -1,8 +1,8 @@
-package com.alqudri.appmontor.model.ossystem
+package com.alqudri.appmontor.model.ann
 
 import com.google.gson.annotations.SerializedName
 
-data class OsSystem(
+data class Response(
 
 	@field:SerializedName("OSManufacturer")
 	val oSManufacturer: String? = null,
@@ -115,21 +115,6 @@ data class OsSystem(
 	@field:SerializedName("Domain")
 	val domain: String? = null,
 
-	@field:SerializedName("loadPercentage")
-	val loadPercentage: String? = null,
-
 	@field:SerializedName("NetworkCard(s)")
-	val networkCardS: List<String?>? = null,
-
-	@field:SerializedName("diskDrive")
-	val diskDrive: List<DiskDrive?>? = null
-)
-
-data class DiskDrive(
-	@field:SerializedName("name")
-	val name: String? = null,
-	@field:SerializedName("free")
-	val free: String? = null,
-	@field:SerializedName("total")
-	val total: String? = null
+	val networkCardS: List<String?>? = null
 )

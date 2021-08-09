@@ -22,6 +22,8 @@ class LogViewModel : ViewModel() {
     val listLog: LiveData<LogList> get() = _listLog
     private val _listAccess = MutableLiveData<AccessLog>()
     val listAcces: LiveData<AccessLog> get() = _listAccess
+    private val _error = MutableLiveData<String>()
+    val error: LiveData<String> get() = _error
 
 
     private val _listNonParse = MutableLiveData<NonParseLog>()
@@ -31,6 +33,7 @@ class LogViewModel : ViewModel() {
         requestData.enqueue(object : Callback<LogList> {
             override fun onFailure(call: Call<LogList>, t: Throwable) {
                 Log.d("model",""+ t.message)
+                _error.postValue(t.message)
             }
 
             override fun onResponse(call: Call<LogList>, response: Response<LogList>) {
@@ -50,6 +53,7 @@ class LogViewModel : ViewModel() {
         requestData.enqueue(object : Callback<AccessLog> {
             override fun onFailure(call: Call<AccessLog>, t: Throwable) {
                 Log.d("model",""+ t.message)
+                _error.postValue(t.message)
             }
 
             override fun onResponse(call: Call<AccessLog>, response: Response<AccessLog>) {
@@ -69,6 +73,7 @@ class LogViewModel : ViewModel() {
         requestData.enqueue(object : Callback<NonParseLog> {
             override fun onFailure(call: Call<NonParseLog>, t: Throwable) {
                 Log.d("model",""+ t.message)
+                _error.postValue(t.message)
             }
 
             override fun onResponse(call: Call<NonParseLog>, response: Response<NonParseLog>) {

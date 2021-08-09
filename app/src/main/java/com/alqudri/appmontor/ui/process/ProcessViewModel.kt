@@ -19,11 +19,15 @@ class ProcessViewModel : ViewModel() {
     )
     private val _listProcess = MutableLiveData<GetProcess>()
     val listProcess: LiveData<GetProcess> get() = _listProcess
+
+    private val _error = MutableLiveData<String>()
+    val error: LiveData<String> get() = _error
     fun getProcess() {
         val requestData = request.getProcess()
         requestData.enqueue(object : Callback<GetProcess> {
             override fun onFailure(call: Call<GetProcess>, t: Throwable) {
                 Log.d("model",""+ t.message)
+                _error.postValue(t.message)
             }
 
             override fun onResponse(call: Call<GetProcess>, response: Response<GetProcess>) {
